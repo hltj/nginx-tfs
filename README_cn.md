@@ -11,7 +11,7 @@
 * 本项目是从已停止独立开发并集成到 **[alibaba/tengine](https://github.com/alibaba/tengine)** 的 **alibaba/nginx-tfs** 项目 fork 而来。
 * 相对 **alibaba/nginx-tfs** 的改动：
   * **alibaba/tengine** 的 TFS 模块的所有改动都已合并进来，并保留了原始作者及提交时间。
-  * 支持 OpenResty / 官方 Nginx 1.0.x-1.9.x 以及 Tengine 1.2.1-2.1.2。
+  * 支持 OpenResty / 官方 Nginx 1.0.x-1.11.x 以及 Tengine 1.2.1-2.2.0。
 * 这个模块实现了TFS的客户端，为 TFS 提供了 [RESTful API](TFS_RESTful_API_cn.md)。TFS 的全称是 Taobao File System，是淘宝开源的一个分布式文件系统。
 
 编译安装

@@ -1,6 +1,7 @@
 
 /*
  * Copyright (C) 2010-2015 Alibaba Group Holding Limited
+ * Copyright (C) 2017      JiaYanwei
  */
 
 
@@ -321,6 +322,8 @@ ngx_http_tfs_rcs_set_group_info_by_addr(ngx_http_tfs_rcs_info_t *rc_info,
 }
 
 
+void dummy(void *p) {}
+
 void
 ngx_http_tfs_dump_rc_info(ngx_http_tfs_rcs_info_t *rc_info, ngx_log_t *log)
 {
@@ -365,6 +368,8 @@ ngx_http_tfs_dump_rc_info(ngx_http_tfs_rcs_info_t *rc_info, ngx_log_t *log)
                            &group_info[k].ns_vip_text);
         }
     }
+    dummy(physical_clusters);
+    dummy(group_info);
 }
 
 

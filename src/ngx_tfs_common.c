@@ -1,7 +1,7 @@
 
 /*
  * Copyright (C) 2010-2015 Alibaba Group Holding Limited
- * Copyright (C) 2016      JiaYanwei
+ * Copyright (C) 2016-2017 JiaYanwei
  */
 
 
@@ -894,11 +894,14 @@ ngx_http_tfs_get_request_time(ngx_http_tfs_t *t)
     ngx_msec_int_t             ms;
     struct timeval             tv;
     ngx_http_request_t        *r;
+#if defined(tengine_version) && tengine_version>=1002003
     ngx_http_core_loc_conf_t  *clcf;
+#endif
 
     r = t->data;
-    clcf = ngx_http_get_module_loc_conf(r, ngx_http_core_module);
+
 #if defined(tengine_version) && tengine_version>=1002003
+    clcf = ngx_http_get_module_loc_conf(r, ngx_http_core_module);
     if (clcf->request_time_cache) {
         ngx_time_t *tp = ngx_timeofday();
         ms = (ngx_msec_int_t)
